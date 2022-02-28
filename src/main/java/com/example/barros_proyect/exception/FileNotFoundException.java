@@ -1,4 +1,4 @@
-/*package com.example.barros_proyect.exception;
+package com.example.barros_proyect.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -13,5 +13,3 @@ public class FileNotFoundException extends RuntimeException {
     }
 }
 
-
- */

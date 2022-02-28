@@ -1,4 +1,4 @@
-/*package com.example.barros_proyect.property;
+package com.example.barros_proyect.property;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +14,3 @@ public class FileStorageProperties {
     private String uploadDir;
 
 }
-
-
- */

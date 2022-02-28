@@ -1,4 +1,4 @@
-/*package com.example.barros_proyect.domain;
+package com.example.barros_proyect.domain;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -30,4 +30,3 @@ public class Response {
 }
 
 
- */

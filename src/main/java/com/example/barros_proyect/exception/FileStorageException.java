@@ -1,4 +1,4 @@
-/*package com.example.barros_proyect.exception;
+package com.example.barros_proyect.exception;
 
 public class FileStorageException extends RuntimeException {
     public FileStorageException(String message) {
@@ -9,4 +9,3 @@ public class FileStorageException extends RuntimeException {
     }
 }
 
- */
