@@ -37,11 +37,6 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>com.sipios</groupId>
-            <artifactId>spring-search</artifactId>
-            <version>0.2.4</version>
-        </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -49,11 +44,14 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!--
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        -->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
