@@ -34,7 +34,7 @@ public class Evento {
     private Date fecha;
 
     /*@ApiModelProperty(value = "Hora de inicio del evento", dataType = "Time",
-            position = 3)*/
+            position = 3) */
     @NonNull
     @Column(name = "HORA_INICIO")
     private Time horaInicio;
