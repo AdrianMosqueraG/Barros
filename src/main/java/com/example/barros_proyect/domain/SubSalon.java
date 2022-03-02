@@ -1,11 +1,14 @@
 package com.example.barros_proyect.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -14,13 +17,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "SUB_SALON")
-public class SubSalon {
+public class SubSalon implements Serializable {
 
+    @ApiModelProperty(value = "ID del subSalon", dataType = "Integer",
+        position = 1, example = "1")
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_SUBSALON")
     private Integer idSubSalon;
 
+    @ApiModelProperty(value = "Nombre del subSalon", dataType = "String",
+        position = 2, example = "S1")
     @NonNull
     @Column(name = "NOMBRE_SUBSALON")
     private String nombreSubsalon;
@@ -28,8 +35,10 @@ public class SubSalon {
     //@ManyToMany
     //List<Evento> eventos;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ID_SALON",nullable = false,updatable = false,insertable = false)
+    @ApiModelProperty(value = "Nombre del salon", dataType = "Salon",
+        position = 3, example = "Barros")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SALON", referencedColumnName = "ID_SALON")
     private Salon salon;
 
 }
