@@ -32,7 +32,6 @@ public class Salon implements Serializable {
     @Column(name = "NOMBRE_SALON")
     private String nombreSalon;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne(mappedBy = "salon")
     private SubSalon subSalon;
 }

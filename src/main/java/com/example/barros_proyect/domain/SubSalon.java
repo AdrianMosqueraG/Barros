@@ -36,7 +36,15 @@ public class SubSalon implements Serializable {
     //List<Evento> eventos;
 
     @ApiModelProperty(value = "Nombre del salon", dataType = "Salon",
-        position = 3)
+        position = 3, example = "{\n" +
+            "  \"idSubSalon\": 1,\n" +
+            "  \"nombreSubsalon\": \"S1\",\n" +
+            "  \"salon\":{\n" +
+            "            \"idSalon\": 3,\n" +
+            "            \"nombreSalon\": \"Barros\"\n" +
+            "        }\n" +
+            "}")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "SALON", referencedColumnName = "ID_SALON")
     private Salon salon;
