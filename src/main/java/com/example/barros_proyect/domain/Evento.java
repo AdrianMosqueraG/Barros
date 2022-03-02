@@ -33,30 +33,14 @@ public class Evento {
     @Column(name = "FECHA")
     private Date fecha;
 
-    @ApiModelProperty(value = "Hora de inicio del evento", dataType = "Time",
-            position = 3, example = "{\n" +
-            "    \"date\": 0,\n" +
-            "    \"hours\": 0,\n" +
-            "    \"minutes\": 0,\n" +
-            "    \"month\": 0,\n" +
-            "    \"seconds\": 0,\n" +
-            "    \"time\": 0,\n" +
-            "    \"year\": 0\n" +
-            "  }")
+    /*@ApiModelProperty(value = "Hora de inicio del evento", dataType = "Time",
+            position = 3)*/
     @NonNull
     @Column(name = "HORA_INICIO")
     private Time horaInicio;
 
-    @ApiModelProperty(value = "Hora de fin del evento", dataType = "Time",
-            position = 4, example = "{\n" +
-            "    \"date\": 0,\n" +
-            "    \"hours\": 0,\n" +
-            "    \"minutes\": 0,\n" +
-            "    \"month\": 0,\n" +
-            "    \"seconds\": 0,\n" +
-            "    \"time\": 0,\n" +
-            "    \"year\": 0\n" +
-            "  }")
+    /*@ApiModelProperty(value = "Hora de fin del evento", dataType = "Time",
+            position = 4)*/
     @NonNull
     @Column(name = "HORA_FIN")
     private Time horaFin;
@@ -177,16 +161,8 @@ public class Evento {
     @Column(name = "NOTAS")
     private String notas;
 
-    @ApiModelProperty(value = "ID cliente del evento", dataType = "Cliente",
-            position = 27, example = "{\n" +
-            "      \"email\": \"dam011.2021@gmail.com\",\n" +
-            "      \"idCliente\": 1,\n" +
-            "      \"nombre\": \"Adrián\",\n" +
-            "      \"observaciones\": \"documentación del proyecto barros\",\n" +
-            "      \"primerApellido\": \"Mosquera\",\n" +
-            "      \"segundoApellido\": \"García\",\n" +
-            "      \"telefono\": 638196003\n" +
-            "    }")
+    /*@ApiModelProperty(value = "ID cliente del evento", dataType = "Cliente",
+            position = 27)*/
     @ManyToMany
     private List<Cliente> clientes;
 
