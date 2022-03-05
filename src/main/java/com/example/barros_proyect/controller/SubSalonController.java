@@ -39,8 +39,8 @@ public class SubSalonController {
     @ApiOperation(value = "Añadir subSalones", notes = "Metodo para añadir a un subSalon, el cual necesita recibir todos los campos de subSalon")
     @PostMapping("/add")
     public ResponseEntity<SubSalon> addSubSalon(@ApiParam(name = "Objeto_SubSalon", type = "SubSalon", value = "Objeto SubSalon con los campos que quieres añadir") @RequestBody SubSalon subSalon) {
-        SubSalon subSalonAdd = subSalonServiceImpl.addSubSalon(subSalon);
-        return new ResponseEntity<>(subSalonAdd, HttpStatus.OK);
+        SubSalon subSalonNew = subSalonServiceImpl.addSubSalon(subSalon);
+        return new ResponseEntity<>(subSalonNew, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Modificar subSalones", notes = "Metodo para modificar un subSalon. Se busca el subSalon por su ID y si existe se modifican sus parametros por los introducidos")

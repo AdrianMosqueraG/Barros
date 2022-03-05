@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "USUARIO")
-public class Usuario {
+public class Usuario implements Serializable {
 
     @ApiModelProperty(value = "ID del usuario", dataType = "Integer",
         position = 1, example = "1")

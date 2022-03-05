@@ -32,9 +32,6 @@ public class SubSalon implements Serializable {
     @Column(name = "NOMBRE_SUBSALON")
     private String nombreSubsalon;
 
-    //@ManyToMany
-    //List<Evento> eventos;
-
     @ApiModelProperty(value = "Nombre del salon", dataType = "Salon",
         position = 3, example = "{\n" +
             "  \"idSubSalon\": 1,\n" +

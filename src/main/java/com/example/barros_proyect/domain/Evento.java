@@ -1,5 +1,6 @@
 package com.example.barros_proyect.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.NonNull;
 import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Evento {
+public class Evento implements Serializable {
 
     @ApiModelProperty(value = "ID del evento", dataType = "Integer",
         position = 1, example = "1")
@@ -33,16 +35,18 @@ public class Evento {
     @Column(name = "FECHA")
     private Date fecha;
 
-    /*@ApiModelProperty(value = "Hora de inicio del evento", dataType = "Time",
-            position = 3)*/
+    @ApiModelProperty(value = "Hora de inicio del evento", dataType = "Time",
+            position = 3, example = "12:12:12")
     @NonNull
     @Column(name = "HORA_INICIO")
+    @JsonFormat(pattern = "HH:mm:ss")
     private Time horaInicio;
 
-    /*@ApiModelProperty(value = "Hora de fin del evento", dataType = "Time",
-            position = 4)*/
+    @ApiModelProperty(value = "Hora de fin del evento", dataType = "Time",
+            position = 4, example = "12:12:12")
     @NonNull
     @Column(name = "HORA_FIN")
+    @JsonFormat(pattern = "HH:mm:ss")
     private Time horaFin;
 
     @ApiModelProperty(value = "Comida o Cena del evento", dataType = "String",
@@ -161,24 +165,21 @@ public class Evento {
     @Column(name = "NOTAS")
     private String notas;
 
+    @ApiModelProperty(value = "Tipo del evento", dataType = "String",
+            position = 27, example = "comunion")
+    @Column(name = "TipoEvento")
+    private String tipoEvento;
+
     /*@ApiModelProperty(value = "ID cliente del evento", dataType = "Cliente",
-            position = 27)*/
+            position = 28)*/
     @ManyToMany
     private List<Cliente> clientes;
 
     /***/
     @JsonIgnore
     @ApiModelProperty(value = "SubSalones del evento", dataType = "List<SubSalon>",
-            position = 28)
+            position = 29)
     @ManyToMany
     private List<SubSalon> subsalones;
-
-    /***/
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ApiModelProperty(value = "TipoEvento del evento", dataType = "TipoEvento",
-            position = 29)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TIPO_EVENTO",nullable = false,updatable = false,insertable = false)
-    private TipoEvento tipoEvento;
 
 }

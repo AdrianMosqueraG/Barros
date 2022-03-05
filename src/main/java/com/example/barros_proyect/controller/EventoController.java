@@ -39,8 +39,8 @@ public class EventoController {
     @ApiOperation(value = "Añadir eventos", notes = "Metodo para añadir un evento, el cual necesita recibir todos los campos de evento")
     @PostMapping("/add")
     public ResponseEntity<Evento> addEvento(@ApiParam(name = "Objeto_Evento", type = "Evento", value = "Objeto Evento con los campos que quieres añadir") @RequestBody Evento evento) {
-        Evento eventoAdd = eventoServiceImpl.addEvento(evento);
-        return new ResponseEntity<>(eventoAdd, HttpStatus.OK);
+        Evento eventoNew = eventoServiceImpl.addEvento(evento);
+        return new ResponseEntity<>(eventoNew, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Modificar eventos", notes = "Metodo para modificar un evento. Se busca el evento por su ID y si existe se modifican sus parametros por los introducidos")

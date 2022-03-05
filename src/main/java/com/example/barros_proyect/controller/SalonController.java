@@ -39,8 +39,8 @@ public class SalonController {
     @ApiOperation(value = "Añadir salones", notes = "Metodo para añadir un salon, el cual necesita recibir todos los campos de salon")
     @PostMapping("/add")
     public ResponseEntity<Salon> addSalon(@ApiParam(name = "Objeto_Salon", type = "Salon", value = "Objeto Salon con los campos que quieres añadir") @RequestBody Salon salon) {
-        Salon salonAdd = salonServiceImpl.addSalon(salon);
-        return new ResponseEntity<>(salonAdd, HttpStatus.OK);
+        Salon salonNew = salonServiceImpl.addSalon(salon);
+        return new ResponseEntity<>(salonNew, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Modificar Salones", notes = "Metodo para modificar un salon. Se busca el salon por su ID y si existe se modifican sus parametros por los introducidos")

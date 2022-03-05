@@ -40,8 +40,8 @@ public class ClienteController {
     @ApiOperation(value = "Añadir clientes", notes = "Metodo para añadir a un cliente, el cual necesita recibir todos los campos de cliente")
     @PostMapping("/add")
     public ResponseEntity<Cliente> addCliente(@ApiParam(name = "Objeto_Cliente", type = "Cliente", value = "Objeto Cliente con los campos que quieres añadir") @RequestBody Cliente cliente) {
-        Cliente clienteAdd = clienteServiceImpl.addCliente(cliente);
-        return new ResponseEntity<>(clienteAdd, HttpStatus.OK);
+        Cliente clienteNew = clienteServiceImpl.addCliente(cliente);
+        return new ResponseEntity<>(clienteNew, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Modificar clientes", notes = "Metodo para modificar un cliente. Se busca el cliente por su ID y si existe se modifican sus parametros por los introducidos")

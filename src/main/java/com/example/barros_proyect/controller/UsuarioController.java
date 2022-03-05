@@ -39,8 +39,8 @@ public class UsuarioController {
     @ApiOperation(value = "Añadir usuarios", notes = "Metodo para añadir a un usuario, el cual necesita recibir todos los campos de usuario")
     @PostMapping("/add")
     public ResponseEntity<Usuario> addUsuario(@ApiParam(name = "Objeto_Usuario", type = "Usuario", value = "Objeto Usuario con los campos que quieres añadir") @RequestBody Usuario usuario) {
-        Usuario usuarioAdd = usuarioServiceImpl.addUsuario(usuario);
-        return new ResponseEntity<>(usuarioAdd, HttpStatus.OK);
+        Usuario usuarioNew = usuarioServiceImpl.addUsuario(usuario);
+        return new ResponseEntity<>(usuarioNew, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Modificar usuarios", notes = "Metodo para modificar un usuario. Se busca el usuario por su ID y si existe se modifican sus parametros por los introducidos")
